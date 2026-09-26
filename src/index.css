@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: var(--app-surface);
+  --color-surface-dim: var(--app-bg);
+  --color-surface-bright: var(--app-surface-high);
+  --color-surface-container-lowest: var(--app-bg);
+  --color-surface-container-low: var(--app-surface);
+  --color-surface-container: var(--app-surface-container);
+  --color-surface-container-high: var(--app-surface-high);
+  --color-surface-container-highest: var(--app-surface-highest);
+  --color-on-surface: var(--app-text);
+  --color-on-surface-variant: var(--app-text-muted);
+  --color-outline: var(--app-border);
+  --color-outline-variant: var(--app-border);
+  --color-primary: var(--app-primary);
+  --color-on-primary: var(--app-primary-text);
+  --color-primary-container: var(--app-primary-container);
+  --color-background: var(--app-bg);
+  --color-on-background: var(--app-text);
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display-lg: "Playfair Display", Georgia, serif;
+  --font-headline-lg: "Playfair Display", Georgia, serif;
+  --font-headline-md: "Playfair Display", Georgia, serif;
+  --font-headline-sm: "Playfair Display", Georgia, serif;
+  --font-title-md: "Plus Jakarta Sans", sans-serif;
+  --font-body-lg: "Plus Jakarta Sans", sans-serif;
+  --font-body-md: "Plus Jakarta Sans", sans-serif;
+  --font-body-sm: "Plus Jakarta Sans", sans-serif;
+  --font-label-md: "Plus Jakarta Sans", sans-serif;
+  --font-label-sm: "Plus Jakarta Sans", sans-serif;
+}
+
+/* -------------------------------------------------------------
+   Dynamic Theme Definitions (Night, Candle, Parchment)
+   ------------------------------------------------------------- */
+:root, .theme-night, [data-theme="night"] {
+  --app-bg: #0d1322;
+  --app-surface: #151b2b;
+  --app-surface-container: #191f2f;
+  --app-surface-high: #242a3a;
+  --app-surface-highest: #2f3445;
+  --app-text: #dde2f8;
+  --app-text-muted: #9fa8c7;
+  --app-text-dim: #6c7899;
+  --app-border: rgba(221, 226, 248, 0.08);
+  --app-border-subtle: rgba(221, 226, 248, 0.04);
+  --app-border-strong: rgba(221, 226, 248, 0.16);
+  --app-header-bg: rgba(13, 19, 34, 0.92);
+  --app-nav-bg: rgba(21, 27, 43, 0.95);
+  --app-primary: #ffba56;
+  --app-primary-hover: #ffc97a;
+  --app-primary-text: #452b00;
+  --app-primary-container: #e09f3e;
+  --app-glow: rgba(255, 186, 86, 0.12);
+  --app-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  --app-pill-bg: #242a3a;
+  --app-input-bg: #191f2f;
+  --app-reader-progress-bg: #080e1d;
+  color-scheme: dark;
+}
+
+.theme-candle, [data-theme="candle"] {
+  --app-bg: #15110d;
+  --app-surface: #221a13;
+  --app-surface-container: #2b2118;
+  --app-surface-high: #382c20;
+  --app-surface-highest: #47382a;
+  --app-text: #fbe6cb;
+  --app-text-muted: #d5be9f;
+  --app-text-dim: #9c8366;
+  --app-border: rgba(251, 230, 203, 0.12);
+  --app-border-subtle: rgba(251, 230, 203, 0.06);
+  --app-border-strong: rgba(251, 230, 203, 0.22);
+  --app-header-bg: rgba(21, 17, 13, 0.92);
+  --app-nav-bg: rgba(34, 26, 19, 0.95);
+  --app-primary: #ff9e3b;
+  --app-primary-hover: #ffb15c;
+  --app-primary-text: #3d2100;
+  --app-primary-container: #d87f22;
+  --app-glow: rgba(255, 158, 59, 0.22);
+  --app-shadow: 0 4px 20px -2px rgba(22, 12, 4, 0.6);
+  --app-pill-bg: #382c20;
+  --app-input-bg: #2b2118;
+  --app-reader-progress-bg: #100c09;
+  color-scheme: dark;
+}
+
+.theme-parchment, [data-theme="parchment"] {
+  --app-bg: #f5eedf;
+  --app-surface: #ebe0cd;
+  --app-surface-container: #e0d3be;
+  --app-surface-high: #d4c5ac;
+  --app-surface-highest: #c6b499;
+  --app-text: #281f17;
+  --app-text-muted: #62503f;
+  --app-text-dim: #8b745e;
+  --app-border: rgba(60, 42, 28, 0.14);
+  --app-border-subtle: rgba(60, 42, 28, 0.08);
+  --app-border-strong: rgba(60, 42, 28, 0.26);
+  --app-header-bg: rgba(245, 238, 223, 0.94);
+  --app-nav-bg: rgba(235, 224, 205, 0.96);
+  --app-primary: #a85f09;
+  --app-primary-hover: #be6f0d;
+  --app-primary-text: #fffaf2;
+  --app-primary-container: #d99136;
+  --app-glow: rgba(168, 95, 9, 0.16);
+  --app-shadow: 0 4px 18px -2px rgba(60, 40, 20, 0.12);
+  --app-pill-bg: #d4c5ac;
+  --app-input-bg: #e0d3be;
+  --app-reader-progress-bg: #ede1cd;
+  color-scheme: light;
+}
+
+/* Custom Semantic Utility Helpers */
+.bg-app { background-color: var(--app-bg); }
+.bg-app-surface { background-color: var(--app-surface); }
+.bg-app-container { background-color: var(--app-surface-container); }
+.bg-app-high { background-color: var(--app-surface-high); }
+.bg-app-highest { background-color: var(--app-surface-highest); }
+.bg-app-pill { background-color: var(--app-pill-bg); }
+.bg-app-input { background-color: var(--app-input-bg); }
+
+.text-app { color: var(--app-text); }
+.text-app-muted { color: var(--app-text-muted); }
+.text-app-dim { color: var(--app-text-dim); }
+
+.border-app { border-color: var(--app-border); }
+.border-app-subtle { border-color: var(--app-border-subtle); }
+.border-app-strong { border-color: var(--app-border-strong); }
+
+.header-blur-bg { background-color: var(--app-header-bg); }
+.nav-blur-bg { background-color: var(--app-nav-bg); }
+.shadow-app { box-shadow: var(--app-shadow); }
+
+/* Custom Typography & Sizing Helpers */
+.font-headline-lg-mobile {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 600;
+}
+.font-headline-md {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 600;
+}
+.font-headline-sm {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+.font-title-md {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.font-body-lg {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px;
+  line-height: 29px;
+  font-weight: 400;
+}
+.font-body-md {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.font-body-sm {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.font-label-md {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+.font-label-sm {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+/* Safe areas */
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top, 0px), 0px);
+}
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 0px);
+}
+
+/* Gutter & Spacing aliases */
+.px-gutter-mobile {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-margin-mobile {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.p-space-sm { padding: 0.5rem; }
+.p-space-md { padding: 1rem; }
+.p-space-lg { padding: 1.5rem; }
+.pt-space-xs { padding-top: 0.25rem; }
+.pt-space-md { padding-top: 1rem; }
+.pb-space-xs { padding-bottom: 0.25rem; }
+.pb-space-xl { padding-bottom: 2.5rem; }
+.my-space-sm { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.gap-space-xs { gap: 0.25rem; }
+.gap-space-sm { gap: 0.5rem; }
+.gap-space-md { gap: 1rem; }
+.gap-space-lg { gap: 1.5rem; }
+
+/* Custom scrollbar hiding for clean app feel */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ambient Candlelight Warmth animation */
+@keyframes candleFlicker {
+  0%, 100% {
+    box-shadow: 0 0 40px -10px var(--app-glow);
+  }
+  50% {
+    box-shadow: 0 0 55px -6px var(--app-glow);
+  }
+}
+
+.candle-glow {
+  animation: candleFlicker 4s ease-in-out infinite;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Mythos & Quill",
+  "description": "An atmospheric digital literary sanctuary and reader atelier for contemplative stories, moral growth parables, and philosophical codices.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
